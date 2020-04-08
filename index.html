@@ -1,114 +1,129 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Meal Prep App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
     <!-- hero------------------------------------------------ -->
-    <section class="hero is-info">
+    <section class="hero is-success is-bold opacity">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1">Meal Prep App</h1>
-                <h2 class="subtitle">Big Dinner</h2>
+                <h1 class="title is-1">Dinner Party Prep</h1>
+                <p> Step 1: Pick an entree.</p>
+                <p> Step 2: Pick a featured cocktail.</p>
+                <p> Step 3: Print your shopping list and instructions. Voila!</p>
+
             </div>
         </div>
     </section>
+    <br>
 
 
-    <!-- columns--------------------------------------------- -->
-    <div class="columns">
-        <!-- Column1 -->
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="title">Dinner</h2>
-                    <h3 class="subtitle">Author</h3>
+
+    <div>
+        <!-- columns--------------------------------------------- -->
+        <div class="columns">
+            <!-- Column1 -->
+            <div class="column is-two-fifths">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="title">Dinner Recipes</h2>
+
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="searchDinnerInput" class="input is-rounded" type="text"
+                                    placeholder="e.g. Chicken">
+                            </div>
+                            <div id="searchDinnerBtn" class="control">
+                                <a class="button is-success is-rounded">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-success">
+                                <div class="content">
+
+
+                                    <div id="dinnerResults" class="content">
+                                        <!-- Content -->
+
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
                 </div>
-                <footer class="card-footer">
-                    <div class="card-footer-item">
-                        <!-- For some reason, the thumbs up/down/retweet feature is not working -->
-                        <!-- So i just placed yay, nay inside the <a> tags -->
-                        <a href="#" class="button is-success">
-                            <i>Yay</i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-danger">
-                            <i>Boo</i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-info">
-                            <i class="fa fa-thumbs-retweet">Re</i>
-                        </a>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <!-- Column 2 -->
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="title">Drinks</h2>
-                    <h3 class="subtitle">Author</h3>
-                </div>
-                <footer class="card-footer">
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-success">
-                            <i class="fa fa-thumbs-o-up"></i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-danger">
-                            <i class="fa fa-thumbs-o-down"></i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-info">
-                            <i class="fa fa-thumbs-retweet"></i>
-                        </a>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <!-- Column 3 -->
 
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="title">Grocery List</h2>
-                    <h3 class="subtitle">Author</h3>
-                </div>
-                <footer class="card-footer">
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-success">
-                            <i class="fa fa-thumbs-o-up"></i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-danger">
-                            <i class="fa fa-thumbs-o-down"></i>
-                        </a>
-                    </div>
-                    <div class="card-footer-item">
-                        <a href="#" class="button is-info">
-                            <i class="fa fa-thumbs-retweet"></i>
-                        </a>
-                    </div>
-                </footer>
             </div>
+            <!-- Column 2 -->
+            <div class="column is-two-fifths">
+                <div class=" card">
+                    <div class="card-content">
+                        <h2 class="title">Cocktail Recipes</h2>
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="searchCocktailInput" class="input is-rounded" type="text"
+                                    placeholder="e.g. Vodka">
+                            </div>
+                            <div class="control">
+                                <a id="searchCocktailBtn" class="button is-success is-rounded">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="tile is-parent">
+                            <article class="tile is-child notification is-success">
+                                <div class="content">
+
+                                    <div class="content">
+                                        <!-- Content -->
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Column 3 -->
+
+            <div class="column">
+                <div id="match" class="card">
+                    <div class="card-content">
+                        <h2 class="title">Grocery List</h2>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
-        <img src="">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./assets/script.js"></script>
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
