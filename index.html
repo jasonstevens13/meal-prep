@@ -17,7 +17,7 @@
     <section class="hero is-success is-bold opacity">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1">Dinner Party Prep</h1>
+                <h1 class="title is-1">Meals and Sips</h1>
                 <p> Step 1: Pick an entree.</p>
                 <p> Step 2: Pick a featured cocktail.</p>
                 <p> Step 3: Print your shopping list and instructions. Voila!</p>
@@ -33,7 +33,7 @@
         <!-- columns--------------------------------------------- -->
         <div class="columns">
             <!-- Column1 -->
-            <div class="column is-two-fifths">
+            <div class="column is-half">
                 <div class="card">
                     <div class="card-content">
                         <h2 class="title">Dinner Recipes</h2>
@@ -69,15 +69,14 @@
 
             </div>
             <!-- Column 2 -->
-            <div class="column is-two-fifths">
+            <div class="column is-half">
                 <div class=" card">
                     <div class="card-content">
                         <h2 class="title">Cocktail Recipes</h2>
 
                         <div class="field has-addons">
                             <div class="control">
-                                <input id="searchCocktailInput" class="input is-rounded" type="text"
-                                    placeholder="e.g. Vodka">
+                                <input id="alcohol-input" class="input is-rounded" type="text" placeholder="e.g. Vodka">
                             </div>
                             <div class="control">
                                 <a id="searchCocktailBtn" class="button is-success is-rounded">
@@ -90,7 +89,7 @@
                             <article class="tile is-child notification is-success">
                                 <div class="content">
 
-                                    <div class="content">
+                                    <div id="drinksResults" class="content">
                                         <!-- Content -->
                                     </div>
                                 </div>
@@ -100,20 +99,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Column 3 -->
-
-            <div class="column">
-                <div id="match" class="card">
-                    <div class="card-content">
-                        <h2 class="title">Grocery List</h2>
-
-
-
-                    </div>
-                </div>
-            </div>
-
-
 
         </div>
 
@@ -124,6 +109,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/mealscript.js"></script>
+    <script src="./assets/cocktails.js"></script>
 </body>
 
 </html>
