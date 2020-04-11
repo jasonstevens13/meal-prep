@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 
         var dinnerIngredient = $("#searchDinnerInput").val();
-        console.log(dinnerIngredient);
+
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + dinnerIngredient;
 
 
@@ -25,11 +25,6 @@ $(document).ready(function () {
                 var recipeImg = responseArray[i].strMealThumb;
                 var recipeId = responseArray[i].idMeal;
 
-                console.log("___________");
-                console.log(recipeMealTitle);
-                console.log(recipeImg);
-                console.log(recipeId);
-
                 // vars for updating search list in DOM in bulma css style
                 var article = $("<article>", { class: "tile is-child box", id: recipeId });
                 var p = $("<p>", { class: "title", text: recipeMealTitle });
@@ -45,11 +40,72 @@ $(document).ready(function () {
                 $("#dinnerResults").append(br);
 
 
+                // Then make second API call for each result by recipe ID
+                getIngredients(recipeId);
+
+
+
             }
+
+
+
+            function getIngredients() {
+                // Make a new AJAX call using the drink ID to get the instructions and ingredients
+
+                var queryURL2 = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId + "&units=imperial";
+
+
+                $.ajax({
+                    url: queryURL2,
+                    method: "GET"
+                }).then(function (response2) {
+
+                    console.log(response2);
+                    const recipeIDResults = response2.meals[0];
+
+                    const id = "#" + recipeIDResults.idMeal;
+
+                    for (let key in recipeIDResults) {
+
+                        if (key.includes("Ingred") && recipeIDResults[key]) {
+
+                            const last = key.length - 1;
+                            const ingNum = key.charAt(last);
+                            const measureKey = "strMeasure" + ingNum;
+
+                            let ingr = (key, recipeIDResults[key]);
+
+                            let text;
+                            if (recipeIDResults[measureKey] === null) {
+                                text = ingr;
+                            } else {
+                                text = ingr + " " + recipeIDResults[measureKey]
+                            };
+                            ingr = $("<p>", { text: "Ingredient: " + text });
+
+                            $(id).append(ingr);
+                        };
+
+
+                    };
+                    const instr = recipeIDResults.strInstructions;
+                    $(id).append("<br>");
+                    $(id).append("Instructions: " + instr);
+
+                    console.log(instr);
+                });
+
+
+
+            };
+
 
             $("#searchDinnerInput").val('');
 
             document.readyState;
+
+
+
 
 
 
@@ -59,9 +115,8 @@ $(document).ready(function () {
 
 
 
+
     });
-
-
 
 
 });
