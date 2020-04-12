@@ -1,21 +1,17 @@
 $(document).ready(function () {
 
-
-
     $("#searchDinnerBtn").on("click", function (event) {
         event.preventDefault();
-
-
         var dinnerIngredient = $("#searchDinnerInput").val();
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + dinnerIngredient;
 
-
+        // Create ajax call to get the dinner response based on main ingredient search
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-
+            // Empty the search results after each search
             $("#dinnerResults").empty();
             var responseArray = response.meals;
 
@@ -39,15 +35,9 @@ $(document).ready(function () {
                 $(figure).append(img);
                 $("#dinnerResults").append(br);
 
-
                 // Then make second API call for each result by recipe ID
                 getIngredients(recipeId);
-
-
-
             }
-
-
 
             function getIngredients() {
                 // Make a new AJAX call using the drink ID to get the instructions and ingredients
@@ -76,47 +66,31 @@ $(document).ready(function () {
                             let ingr = (key, recipeIDResults[key]);
 
                             let text;
-                            if (recipeIDResults[measureKey] === null) {
-                                text = ingr;
+                            if (recipeIDResults[measureKey] === undefined) {
+                                text = ingr + " - as desired";
                             } else {
-                                text = ingr + " " + recipeIDResults[measureKey]
+                                text = ingr + " - " + recipeIDResults[measureKey]
                             };
                             ingr = $("<p>", { text: "Ingredient: " + text });
 
                             $(id).append(ingr);
                         };
-
-
                     };
                     const instr = recipeIDResults.strInstructions;
                     $(id).append("<br>");
-                    $(id).append("Instructions: " + instr);
+                    $(id).append("<strong>Instructions:</strong> " + instr);
 
-                    console.log(instr);
+                    // console.log(instr);
                 });
 
-
-
             };
-
 
             $("#searchDinnerInput").val('');
 
             document.readyState;
 
-
-
-
-
-
         });
 
-
-
-
-
-
     });
-
 
 });

@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meal Prep App</title>
+    <title>Meals & Sips App</title>
+    <!-- Bulma css framework cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Custom css stylesheet -->
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-
-    <!-- hero------------------------------------------------ -->
+    <!-- Use Bulma  -->
+    <!-- Bulma hero to display title------------------------------------------------ -->
     <section class="hero is-success is-bold opacity">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1">Meals and Sips</h1>
+                <h1 class="title is-1">Meals & Sips</h1>
                 <p> Step 1: Pick an entree.</p>
                 <p> Step 2: Pick a featured cocktail.</p>
                 <p> Step 3: Print your shopping list and instructions. Voila!</p>
@@ -26,79 +27,72 @@
         </div>
     </section>
     <br>
-
-
-
     <div>
-        <!-- columns--------------------------------------------- -->
+        <!-- Bulma columns to organize dinner and cocktail categories ---------------------------------- -->
         <div class="columns">
             <!-- Column1 -->
+            <!-- Set dinner results column to be half the width -->
             <div class="column is-half">
+                <!-- Insert bulma card to contain the column content-->
                 <div class="card">
                     <div class="card-content">
                         <h2 class="title">Dinner Recipes</h2>
 
-
                         <div class="field has-addons">
                             <div class="control">
+                                <!-- Bulma input for the search field -->
                                 <input id="searchDinnerInput" class="input is-rounded" type="text"
                                     placeholder="e.g. Chicken">
                             </div>
+                            <!-- Bulma search button -->
                             <div id="searchDinnerBtn" class="control">
                                 <a class="button is-success is-rounded">
                                     Search
                                 </a>
                             </div>
                         </div>
-
+                        <!-- Bulma tile to contain the search results -->
                         <div class="tile is-parent">
                             <article class="tile is-child notification is-success">
                                 <div class="content">
-
-
                                     <div id="dinnerResults" class="content">
                                         <!-- Content -->
-
                                     </div>
                                 </div>
                             </article>
                         </div>
-
                     </div>
                 </div>
-
             </div>
             <!-- Column 2 -->
+            <!-- Set dinner results column to be half the width -->
             <div class="column is-half">
+                <!-- Insert bulma card to contin the column content -->
                 <div class=" card">
                     <div class="card-content">
                         <h2 class="title">Cocktail Recipes</h2>
 
                         <div class="field has-addons">
                             <div class="control">
+                                <!-- Bulma input for the search field -->
                                 <input id="alcohol-input" class="input is-rounded" type="text" placeholder="e.g. Vodka">
                             </div>
                             <div class="control">
+                                <!-- Bulma search button -->
                                 <a id="searchCocktailBtn" class="button is-success is-rounded">
                                     Search
                                 </a>
                             </div>
                         </div>
-
+                        <!-- Bulma tile to contain the search results -->
                         <div class="tile is-parent">
                             <article class="tile is-child notification is-success">
                                 <div class="content">
-
                                     <div id="drinksResults" class="content">
                                         <!-- Content -->
-
                                         <div id="cocktailResults" class="content">
                                             <!-- Content -->
-
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </article>
@@ -107,25 +101,16 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
-        <!-- Show results here instead -->
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Meals & Sips @2020</strong> by Wub A, Jason S, Amith D. <br>
+                Enjoy Responsibly
+            </p>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/mealscript.js"></script>

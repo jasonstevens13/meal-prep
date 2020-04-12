@@ -12,3 +12,7 @@ html{
 #match{
     min-height: 224px;
 }
+.footer {
+    margin-top: 1rem;
+    padding: 2rem;
+}

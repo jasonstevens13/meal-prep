@@ -79,7 +79,7 @@ $(document).ready(function () {
                             if (drinkObj[measureKey] === null) {
                                 text = ingr;
                             } else {
-                                text = ingr + " " + drinkObj[measureKey]
+                                text = ingr + " - " + drinkObj[measureKey]
                             };
                             // Create a p tag to store the ingredient text
                             ingr = $("<p>", { text: "Ingredient " + ingNum + ": " + text });
@@ -90,7 +90,7 @@ $(document).ready(function () {
                     // Append instructions to the id
                     $(id).append("<br>");
                     const instr = drinkObj.strInstructions;
-                    $(id).append("Instruction: " + instr);
+                    $(id).append("<strong>Instruction: </strong>" + instr);
                 });
             };
         });
