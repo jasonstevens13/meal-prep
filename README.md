@@ -1,5 +1,6 @@
 # Meals & Sips
 Your dinner party prep app!
+Link: https://jasonstevens13.github.io/meal-prep/
 
 # Description
 The 'Meals & Sips' application allows you to easily plan your next dinner party in a few easy steps. Pick your entree, pick your featured cocktail (or two), and then impress your guests. This application provides you with a fair number of choices, but not too many to be overwhelmed.   
